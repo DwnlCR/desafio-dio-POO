@@ -1,8 +1,5 @@
 package br.com.dio.desafio.domain;
-
-public class Curso {
-    private String title;
-    private String description;
+public non-sealed class Curso extends Conteudo{
     private int hourlyLoad;
 
     public Curso(String title, String description, int hourlyLoad) {
@@ -11,22 +8,10 @@ public class Curso {
         this.hourlyLoad = hourlyLoad;
     }
 
-    public String getTitle() {
-        return title;
+    @Override
+    public double calculateXp() {
+        return XP_PADRAO * hourlyLoad;
     }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public int getHourlyLoad() {
         return hourlyLoad;
     }
